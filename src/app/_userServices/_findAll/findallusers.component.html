@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+
+<div class="container">
+  <div class="w-75 p-3">
+    <table class="table table-bordered">
+      <thead class="table-primary">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Button</th>
+        <th scope="col">Button</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users$ ">
+
+             <th>{{user.userid}}</th>
+             <th>{{user.firstname}}</th>
+             <th>{{user.lastname}}</th>
+             <th><button type="button" class="btn btn-outline-info" [routerLink]="['/_update' , user.userid]" > Edit </button></th>
+             <th><button type="button" class="btn btn-outline-danger" [routerLink]="['/delete' , user.userid]" > Delete </button></th>
+
+         </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+

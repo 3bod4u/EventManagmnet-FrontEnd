@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div>
+  <ul *ngFor="let event of event$">
+    <li>
+      {{event.eventid}} - {{event.title}} <br>
+      - {{event.description}}- {{event.date}}
+      -{{event.approved}} - {{event.counter}}
+      <button [routerLink]="['/Comment', event.eventid]"> Comment </button>
+      <button [routerLink]="['/updateEvent' , event.eventid]"> Update </button>
+    </li>
+  </ul>
+</div>

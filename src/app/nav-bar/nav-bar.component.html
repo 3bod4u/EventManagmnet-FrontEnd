@@ -1,0 +1,25 @@
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button routerLink="/myEvent" class="btn btn-outline-success" *ngIf="orgnizer"> My events </button>
+  <button routerLink="/addEvent" class="btn btn-outline-success" *ngIf="orgnizer">Add Event</button>
+  <button routerLink="/update" class="btn btn-outline-success" *ngIf="orgnizer"> update </button>
+  <button routerLink="/login" class="btn btn-outline-danger" *ngIf="orgnizer">Log out</button>
+</div>
+<div>
+  <button routerLink="/availableEvent" class="btn btn-outline-success"*ngIf="attender"> Events Ready To book </button>
+  <button routerLink="/userTicket" class="btn btn-outline-success" *ngIf="attender"> My ticket </button>
+  <button routerLink="/update" class="btn btn-outline-success" *ngIf="attender"> update </button>
+  <button routerLink="/login" class="btn btn-outline-danger" *ngIf="attender">Log out</button>
+</div>
+
+
+<div class="container">
+  <button routerLink="/findall" class="btn btn-outline-success" *ngIf="admin"> Users </button>
+  <button routerLink="/getAllEvents" class="btn btn-outline-success" *ngIf="admin">Events</button>
+  <button routerLink="/login" class="btn btn-outline-danger" *ngIf="admin">Log out</button>
+</div>
+
+<router-outlet></router-outlet>
+
+<hr class="btn-outline-warning">
+

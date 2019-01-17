@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div>
+  <H1> Update </H1>
+  <div class="col-md-6">
+
+
+    <form  [formGroup]="myReactiveForm">
+
+      <div >
+        <label for="firstName">Enter First Name</label>
+        <br>
+        <input type="text" class="form-control"
+               formControlName="firstname"
+               id="firstName" placeholder="Enter First Name" name="firstName">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Enter Last Name </label>
+        <br>
+        <input type="text" class="form-control"
+               formControlName="lastname"
+               id="lastName" placeholder="Enter Last Name" name="lastName">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Enter Your phone number</label>
+        <br>
+        <input type="text" class="form-control"
+               formControlName="phone"
+               id="phone" placeholder="Enter your phone number" name="phone">
+      </div>
+
+      <br>
+
+      <button type="submit" class="btn btn-primary"
+              (click)="update()"
+              [disabled]="!myReactiveForm.valid" [disabled]="!myReactiveForm2.valid">Submit</button>
+    </form>
+  </div>
+
+
+</div>

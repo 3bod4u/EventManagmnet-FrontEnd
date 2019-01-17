@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div>
+  <ul *ngFor="let commentss of comment$ ">
+    <li class="list-group-item active">
+      Comment : {{commentss.comment}}
+     <br>
+      write by : {{commentss.user.firstname}} {{commentss.user.lastname}}
+  </ul>
+</div>
+
+<form [formGroup]="ReactiveForm">
+  <textarea formControlName="comment"></textarea>
+</form>
+
+<button (click)="addComment()">Add comment</button>

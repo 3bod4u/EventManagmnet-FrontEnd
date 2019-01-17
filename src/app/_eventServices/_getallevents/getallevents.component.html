@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+<div class="w-75 p-3">
+<h4>Events Ready To books : </h4>
+<table class="table table-bordered">
+  <thead class="table-primary">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">title</th>
+    <th scope="col">description</th>
+    <th scope="col">Seats</th>
+    <th scope="col">Button</th>
+    <th scope="col">Button</th>
+    <th scope="col">Button</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let event of event$ " >
+        <th>{{event.eventid}}</th>
+        <td>{{event.title}}</td>
+        <td>{{event.description}}</td>
+        <td>{{event.seats}}</td>
+        <td><button type="button" class="btn btn-outline-info" (click)="desapproveEvent(event.eventid)"> Disapprove </button></td>
+        <td><button type="button" class="btn btn-outline-info" [routerLink]="['/updateEvent' , event.eventid]"> Update </button></td>
+        <td><button type="button" class="btn btn-outline-danger" (click)="deleteEvent(event.eventid)"> Delete </button></td>
+  </tr>
+  </tbody>
+
+</table>
+</div>
+</div>
+
+<br>
+<hr>
+
+
+<div class="container">
+  <div class="w-75 p-3">
+<h4>Events Not Approved eat : </h4>
+
+<table class="table table-bordered">
+  <thead class="table-primary">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">title</th>
+    <th scope="col">description</th>
+    <th scope="col">Seats</th>
+    <th scope="col">Button</th>
+    <th scope="col">Button</th>
+    <th scope="col">Button</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let event of events$" >
+    <th>{{event.eventid}}</th>
+    <td>{{event.title}}</td>
+    <td>{{event.description}}</td>
+    <td>{{event.seats}}</td>
+    <td><button type="button" class="btn btn-outline-info" (click)="approveEvent(event.eventid)"> Approve </button></td>
+    <td><button type="button" class="btn btn-outline-info" [routerLink]="['/updateEvent' , event.eventid]"> Update </button></td>
+    <td><button type="button" class="btn btn-outline-danger" (click)="deleteEvent(event.eventid)"> Delete </button></td>
+  </tr>
+  </tbody>
+
+</table>
+</div>
+</div>

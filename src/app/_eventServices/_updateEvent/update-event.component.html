@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<form [formGroup]="myReactiveForm">
+
+  <div>
+    <label>Tilte : </label>
+    <br>
+    <input type="text" formControlName="title">
+  </div>
+
+  <div>
+    <label> Description : </label>
+    <br>
+    <input type="text" formControlName="description">
+  </div>
+
+  <div>
+    <label> Date : </label>
+    <br>
+    <input type="date" formControlName="date">
+  </div>
+
+  <div>
+    <label> Seats : </label>
+    <br>
+    <input type="text" formControlName="seats">
+  </div>
+
+  <div>
+    <label> City : </label>
+    <br>
+    <input type="text" formControlName="city">
+  </div>
+
+</form>
+
+<button [routerLink]="['']" (click)="updateEvent()">Click</button>

@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="w-100 p-3">
+    <table class="table table-bordered">
+      <thead class="table-primary">
+      <tr>
+        <th>#</th>
+        <th>Tilte</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Book a tikcet</th>
+        <th>Comment</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let event of event$ ">
+        <th>{{event.eventid}}</th>
+        <th>{{event.title}}</th>
+        <th>{{event.description}}</th>
+        <th>{{event.date}}</th>
+        <th><button class="btn btn-success" (click)="bookTicket(event.eventid)"> Book Now! </button></th>
+        <th><button class="btn btn-info" [routerLink]="['/Comment',event.eventid]"> Comment </button></th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
